@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome to the Dashboard {{ username }}!</h2>
+    
+    <form action="{{ url_for('dashboard') }}" method="post">
+        <label for="magnet_link">Enter Magnet Link:</label><br>
+        <input type="text" id="magnet_link" name="magnet_link"><br>
+        <input type="submit" value="Download">
+    </form>
+
+    <h3>Your Files:</h3>
+    <ul>
+        {% for folder in folders %}
+	<li><a href="{{ url_for('show_files', folder=folder) }}">{{ folder }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
