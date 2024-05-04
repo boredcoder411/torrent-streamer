@@ -3,7 +3,7 @@ Requirements:
  - Linux
  - python
  - aria2
-To install:
+To install:  
 ```bash
 pip install -r requirements.txt
 python main.py
